@@ -1,0 +1,13 @@
+Google Analytics needs JavaScript to track the site activity.  However, this
+not ideal for sites, where one might not have full control.  For example,
+in a corporate blog or in a forum, user will not the have necessary control insert GA
+JavaScript to the page.  GA Proxy can be used in these cases.
+
+GAProxy builds the Google Analytics __utm.gif url with sensible defaults
+and can be deployed in Google App Engine.   Once deployed in the app engine,
+GAProxy can be used as an image tracker URL, which can be placed on any web page.
+
+Usage Instructions:
+
+<img src=http://<appid>.appspot.com/gaproxy?host=<hostname.com>&pageurl=<url of page>&account=<GA site id eg., UA-12345> />
+  
