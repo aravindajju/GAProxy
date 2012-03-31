@@ -21,6 +21,7 @@ public class GAURLBuilder {
 	 * GA url for the request
 	 */
 	private static String 	gaImg = "http://www.google-analytics.com/__utm.gif";
+	private static String 	gaImgSSL = "https://ssl.google-analytics.com/__utm.gif";
 
 
 	
@@ -29,7 +30,11 @@ public class GAURLBuilder {
 		
 		StringBuffer sb = new StringBuffer();
 		
-		sb.append(gaImg + "?");
+		if (request.isSecure()) { 
+			sb.append(gaImgSSL + "?");
+		}else {			
+			sb.append(gaImg + "?");
+		}
 		
 		String utmac=request.getParameter("account");
 		sb.append("utmac=" + utmac);
